@@ -9,4 +9,5 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -v
+      - run: python scripts/check_amiga_source.py
       - run: cc -std=c99 -Wall -Wextra -Werror -O2 client/amicompute.c -o amicompute
