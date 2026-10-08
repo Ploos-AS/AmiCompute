@@ -11,6 +11,7 @@ The first operation is `invert`: send a binary PGM (P5) grayscale image, invert 
 ```sh
 python3 -m worker.server --host 127.0.0.1 --port 6050
 python3 -m unittest discover -s tests -v
+python3 examples/make_sample.py
 ```
 Python 3.10+ standard library only. For another machine on your trusted LAN, bind the worker to its LAN IP and open port 6050 only to the Amiga.
 
