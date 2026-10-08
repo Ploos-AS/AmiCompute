@@ -74,7 +74,8 @@ int main(int argc, char **argv) {
     }
     FILE *out = fopen(argv[4], "wb");
     if (!out) { perror("output"); free(data); return 1; }
-    int ok = fwrite(data, 1, length, out) == length && fclose(out) == 0;
+    int ok = fwrite(data, 1, length, out) == length;
+    if (fclose(out) != 0) ok = 0;
     free(data);
     return ok ? 0 : 1;
 }
